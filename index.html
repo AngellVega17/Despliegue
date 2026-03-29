@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UrbanSafe — Alerta. Conecta. Protege.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="theme-color" content="#080C14">
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">
+      <a href="#"
+         onclick="window.scrollTo({top:0,behavior:'smooth'}); setTimeout(()=>location.reload(),400); return false;"
+         class="nav-logo-link"
+         aria-label="Ir al inicio">
+        <img src="logo-footer.png" alt="UrbanSafe" class="nav-logo-img">
+      </a>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#features">Funciones</a></li>
+      <li><a href="#stats">Impacto</a></li>
+      <li><a href="#how">¿Cómo funciona?</a></li>
+      <li class="mobile-download"><a href="#cta"> Descargar</a></li>
+    </ul>
+    <a href="#cta" class="nav-cta desktop-only">⬇ Descargar</a>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="grid-bg"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="radar-wrap">
+      <div class="radar-ring"></div>
+      <div class="radar-ring"></div>
+      <div class="radar-ring"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Seguridad En Tiempo Real De Tu Ciudad.
+      </div>
+
+      <h1 class="hero-title">
+        De Norte a Sur,<br><span class="title-blue"> Seguro</span><br>Para Todos.
+      </h1>
+
+      <p class="hero-sub">
+        UrbanSafe conecta a los ciudadanos con las entidades de seguridad en tiempo real.
+        Reporta, alerta y protege a tu comunidad con un solo toque.
+      </p>
+
+      <div class="hero-actions">
+        <button class="btn-primary">🛡️ Únete ahora — Es gratis</button>
+        <button class="btn-secondary">▶ Ver cómo funciona</button>
+      </div>
+
+      <!-- Trust bar -->
+      <div class="trust-bar">
+        <div class="trust-item"><span class="trust-num">50K+</span><span class="trust-label">Usuarios activos</span></div>
+        <div class="trust-divider"></div>
+        <div class="trust-item"><span class="trust-num">12</span><span class="trust-label">Ciudades</span></div>
+        <div class="trust-divider"></div>
+        <div class="trust-item"><span class="trust-num">94%</span><span class="trust-label">Respuesta rápida</span></div>
+      </div>
+    </div>
+
+    <!-- Phone Mockup -->
+    <div class="phone-wrap">
+      <div class="phone-glow"></div>
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-notch"></div>
+          <div class="phone-header">
+            <span class="phone-logo">UrbanSafe</span>
+            <span class="phone-status">
+              <span class="phone-status-dot"></span>Activo
+            </span>
+          </div>
+          <div class="phone-map">
+            <div class="map-grid"></div>
+            <div class="map-pin pin-1"></div>
+            <div class="map-pin pin-2"></div>
+            <div class="map-pin pin-3"></div>
+          </div>
+          <div class="phone-alert alert-blue">
+            <div class="alert-icon">🔵</div>
+            <div class="alert-text">
+              <div class="alert-title">Patrullaje activo</div>
+              <div class="alert-desc">Cra 7 con Calle 45</div>
+            </div>
+            <span class="alert-time">Ahora</span>
+          </div>
+          <div class="phone-alert alert-yellow">
+            <div class="alert-icon">⚠️</div>
+            <div class="alert-text">
+              <div class="alert-title">Zona de precaución</div>
+              <div class="alert-desc">3 reportes en tu área</div>
+            </div>
+            <span class="alert-time">5m</span>
+          </div>
+          <div class="phone-sos">🆘 SOS — Emergencia</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <p class="section-label">¿Por qué UrbanSafe?</p>
+    <h2 class="section-title">Seguridad inteligente, diseñada para todos.</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon icon-blue">📍</div>
+        <div class="feature-title">Alertas en tiempo real</div>
+        <div class="feature-desc">Recibe notificaciones instantáneas sobre incidentes cerca de ti, reportados por tu comunidad y verificados por autoridades.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon icon-red">🆘</div>
+        <div class="feature-title">Botón SOS</div>
+        <div class="feature-desc">Con un solo toque, notifica a la Policía, Bomberos o Cruz Roja con tu ubicación exacta. La ayuda llega más rápido.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon icon-green">🤝</div>
+        <div class="feature-title">Red comunitaria</div>
+        <div class="feature-desc">Conecta con tus vecinos, comparte reportes verificados y construye una red de seguridad barrio a barrio.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon icon-yellow">⚠️</div>
+        <div class="feature-title">Zonas de riesgo</div>
+        <div class="feature-desc">Mapa interactivo con zonas categorizadas por nivel de riesgo. Planea tu ruta más segura antes de salir.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon icon-blue">📊</div>
+        <div class="feature-title">Reportes ciudadanos</div>
+        <div class="feature-desc">Documenta incidentes con fotos y descripción. Tu reporte ayuda a las autoridades a actuar con mayor precisión.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon icon-green">✅</div>
+        <div class="feature-title">Verificación en tiempo real</div>
+        <div class="feature-desc">Sistema de validación colaborativa que filtra reportes falsos y garantiza información confiable para toda la comunidad.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats" id="stats">
+    <div class="stat-item">
+      <div class="stat-num">94%</div>
+      <div class="stat-label">Tasa de respuesta más rápida</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">50K+</div>
+      <div class="stat-label">Ciudadanos en la red</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">12</div>
+      <div class="stat-label">Ciudades conectadas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">24/7</div>
+      <div class="stat-label">Monitoreo activo</div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-section" id="how">
+    <div class="how-inner">
+      <p class="section-label">¿Cómo funciona?</p>
+      <h2 class="section-title">Tres pasos para estar más seguro.</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <div class="step-icon">📲</div>
+          <div class="step-title">Descarga la app</div>
+          <div class="step-desc">Disponible gratis en iOS y Android. Configura tu zona y perfil en menos de 2 minutos.</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <div class="step-icon">🗺️</div>
+          <div class="step-title">Explora tu ciudad</div>
+          <div class="step-desc">Visualiza en tiempo real incidentes, patrullajes y zonas de riesgo cerca de ti.</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <div class="step-icon">🤝</div>
+          <div class="step-title">Conecta y protege</div>
+          <div class="step-desc">Reporta incidentes, activa el SOS y fortalece la seguridad de tu comunidad.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA + QR -->
+  <section class="cta-section" id="cta">
+    <div class="cta-glow"></div>
+
+    <div class="cta-inner">
+      <!-- Left: Text -->
+      <div class="cta-left">
+        <h2 class="cta-title">Descarga<br><span class="title-blue">UrbanSafe</span><br>hoy.</h2>
+        <p class="cta-sub">Escanea el código QR para unirte a la comunidad que está transformando la seguridad urbana en Colombia.</p>
+        <div class="cta-coming-soon">
+          <span class="coming-dot"></span>
+          Próximamente en iOS y Android
+        </div>
+      </div>
+
+      <!-- Right: QR Placeholder -->
+      <div class="qr-container">
+        <div class="qr-card">
+          <div class="qr-card-header">
+            <span class="qr-badge">
+              <span class="badge-dot"></span>
+              Próximamente
+            </span>
+          </div>
+          <div class="qr-frame">
+            <div class="qr-corner qr-corner--tl"></div>
+            <div class="qr-corner qr-corner--tr"></div>
+            <div class="qr-corner qr-corner--bl"></div>
+            <div class="qr-corner qr-corner--br"></div>
+            <div class="qr-placeholder-grid">
+              <div class="qr-module"></div><div class="qr-module qr-dark"></div><div class="qr-module qr-dark"></div><div class="qr-module"></div><div class="qr-module qr-dark"></div><div class="qr-module"></div><div class="qr-module qr-dark"></div>
+              <div class="qr-module qr-dark"></div><div class="qr-module"></div><div class="qr-module qr-dark"></div><div class="qr-module qr-dark"></div><div class="qr-module"></div><div class="qr-module qr-dark"></div><div class="qr-module"></div>
+              <div class="qr-module qr-dark"></div><div class="qr-module qr-dark"></div><div class="qr-module"></div><div class="qr-module"></div><div class="qr-module qr-dark"></div><div class="qr-module"></div><div class="qr-module qr-dark"></div>
+              <div class="qr-module"></div><div class="qr-module qr-dark"></div><div class="qr-module"></div><div class="qr-module qr-dark"></div><div class="qr-module"></div><div class="qr-module qr-dark"></div><div class="qr-module"></div>
+              <div class="qr-module qr-dark"></div><div class="qr-module"></div><div class="qr-module qr-dark"></div><div class="qr-module"></div><div class="qr-module qr-dark"></div><div class="qr-module qr-dark"></div><div class="qr-module"></div>
+              <div class="qr-module"></div><div class="qr-module qr-dark"></div><div class="qr-module qr-dark"></div><div class="qr-module qr-dark"></div><div class="qr-module"></div><div class="qr-module"></div><div class="qr-module qr-dark"></div>
+              <div class="qr-module qr-dark"></div><div class="qr-module"></div><div class="qr-module"></div><div class="qr-module qr-dark"></div><div class="qr-module qr-dark"></div><div class="qr-module qr-dark"></div><div class="qr-module"></div>
+            </div>
+            <div class="qr-scan-line"></div>
+            <div class="qr-center-logo">🛡️</div>
+          </div>
+          <div class="qr-card-footer">
+            <p class="qr-label">Escanea para descargar</p>
+            <p class="qr-sublabel">El QR estará disponible al lanzamiento</p>
+          </div>
+        </div>
+        <div class="qr-orb"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">
+      <a href="#"
+         onclick="window.scrollTo({top:0,behavior:'smooth'}); setTimeout(()=>location.reload(),400); return false;"
+         aria-label="Volver al inicio">
+        <img src="logo-footer.png" alt="UrbanSafe" class="footer-logo-img">
+      </a>
+    </div>
+    <div class="footer-text">© 2025 UrbanSafe. Hecho con ❤️ en Colombia.</div>
+    <div class="footer-text">Privacidad · Términos · Contacto</div>
+  </footer>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast">
+    <span class="toast-icon">🔔</span>
+    <div>
+      <div class="toast-title">Alerta en tu zona</div>
+      <div class="toast-sub">Reporte verificado a 300m de ti</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
