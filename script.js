@@ -17,7 +17,6 @@ function animateRing() {
 }
 animateRing();
 
-// Expand ring on interactive elements
 document.querySelectorAll('button, a, .feature-card').forEach(el => {
   el.addEventListener('mouseenter', () => {
     ring.style.width  = '52px';
@@ -30,24 +29,37 @@ document.querySelectorAll('button, a, .feature-card').forEach(el => {
 });
 
 
-// ─── HAMBURGER MENU ──────────────────────────────────────────────────────────
-const hamburger = document.getElementById('hamburger');
-const navLinks  = document.getElementById('nav-links');
+// ─── MOBILE MENU ─────────────────────────────────────────────────────────────
+const hamburger     = document.getElementById('hamburger');
+const mobileMenu    = document.getElementById('mobile-menu');
+const menuClose     = document.getElementById('mobile-menu-close');
+const menuCta       = document.getElementById('mobile-menu-cta');
+
+function openMenu() {
+  hamburger.classList.add('open');
+  mobileMenu.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMenu() {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+  document.body.style.overflow = '';
+}
 
 hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  navLinks.classList.toggle('open');
-  document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+  mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
 });
 
-// Close menu when a link is clicked
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('open');
-    navLinks.classList.remove('open');
-    document.body.style.overflow = '';
-  });
+menuClose.addEventListener('click', closeMenu);
+
+// Cerrar al hacer clic en cualquier link del menú
+mobileMenu.querySelectorAll('.mobile-menu-link').forEach(link => {
+  link.addEventListener('click', closeMenu);
 });
+
+// Cerrar al hacer clic en el botón descargar
+if (menuCta) menuCta.addEventListener('click', closeMenu);
 
 
 // ─── TOAST NOTIFICATION ──────────────────────────────────────────────────────
@@ -75,4 +87,4 @@ document.querySelectorAll('.feature-card, .stat-item').forEach(el => {
   el.style.opacity   = '0';
   el.style.transform = 'translateY(24px)';
   observer.observe(el);
-});
+}); 
