@@ -29,13 +29,16 @@
       <li><a href="#stats">Impacto</a></li>
       <li><a href="#how">¿Cómo funciona?</a></li>
     </ul>
-    <a href="#cta" class="nav-cta desktop-only">⬇ Descargar</a>
+    <a href="#cta" class="nav-cta desktop-only"> Descargar</a>
     <button class="hamburger" id="hamburger" aria-label="Menú">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <!-- MOBILE MENU OVERLAY -->
+  <!-- MOBILE MENU BACKDROP -->
+  <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
+
+  <!-- MOBILE MENU PANEL -->
   <div class="mobile-menu" id="mobile-menu">
     <div class="mobile-menu-top">
       <div class="mobile-menu-logo">
@@ -66,8 +69,11 @@
 
     <div class="mobile-menu-bottom">
       <a href="#cta" class="mobile-menu-cta" id="mobile-menu-cta">
-        <span>⬇ Descargar UrbanSafe</span>
-        <span class="mcta-sub">Próximamente en iOS y Android</span>
+        <span class="mcta-icon">⬇</span>
+        <div class="mcta-main">
+          <span class="mcta-label"> Descargar </span>
+          <span class="mcta-sub">Próximamente en iOS </span>
+        </div>
       </a>
       <div class="mobile-menu-footer">
         <span class="mmf-dot"></span>
@@ -257,7 +263,7 @@
         <p class="cta-sub">Escanea el código QR para unirte a la comunidad que está transformando la seguridad urbana en Colombia.</p>
         <div class="cta-coming-soon">
           <span class="coming-dot"></span>
-          Próximamente en iOS y Android
+          Próximamente en iOS
         </div>
       </div>
 
