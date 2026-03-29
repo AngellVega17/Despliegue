@@ -20,6 +20,33 @@ document.querySelectorAll('button, a, .feature-card').forEach(el => {
 });
 
 
+// ─── LOGO — SCROLL AL INICIO + RECARGA ──────────────────────────────────────
+function goHome(e) {
+  e.preventDefault();
+  // Si ya estamos arriba, recarga directo
+  if (window.scrollY < 10) {
+    location.reload();
+    return;
+  }
+  // Si estamos abajo, primero sube y luego recarga
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  const onScrollEnd = () => {
+    if (window.scrollY < 10) {
+      window.removeEventListener('scroll', onScrollEnd);
+      setTimeout(() => location.reload(), 100);
+    }
+  };
+  window.addEventListener('scroll', onScrollEnd);
+  // Fallback por si el scroll no dispara eventos
+  setTimeout(() => location.reload(), 800);
+}
+
+const logoNav    = document.getElementById('logo-link');
+const logoFooter = document.getElementById('logo-link-footer');
+if (logoNav)    logoNav.addEventListener('click', goHome);
+if (logoFooter) logoFooter.addEventListener('click', goHome);
+
+
 // ─── MOBILE MENU PANEL ───────────────────────────────────────────────────────
 const hamburger  = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
