@@ -1,0 +1,25 @@
+def calcular_reynolds(densidad, velocidad, diametro, viscosidad):
+    """
+    Calcula el Número de Reynolds y determina el tipo de flujo.
+    """
+    reynolds = (densidad * velocidad * diametro) / viscosidad
+    
+    if reynolds < 2300:
+        regimen = "Laminar (Flujo suave y ordenado)"
+    elif 2300 <= reynolds <= 4000:
+        regimen = "Transicional (Inestable)"
+    else:
+        regimen = "Turbulento (Flujo caótico con remolinos)"
+        
+    return reynolds, regimen
+
+#Ejemplo con Agua a 20°C en una tubería 
+rho = 998      # Densidad del agua (kg/m3)
+v = 0.5        # Velocidad del flujo (m/s)
+d = 0.05       # Diámetro del tubo (5 cm -> 0.05 m)
+mu = 0.001002  # Viscosidad dinámica (Pa·s)
+
+re, tipo = calcular_reynolds(rho, v, d, mu)
+
+print(f"Número de Reynolds: {re:.2f}")
+print(f"Estado del flujo: {tipo}")

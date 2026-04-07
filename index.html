@@ -26,7 +26,7 @@
       <li><a href="#stats">Impacto</a></li>
       <li><a href="#how">¿Cómo funciona?</a></li>
     </ul>
-    <a href="#cta" class="nav-cta desktop-only"> Descargar</a>
+    <a href="#cta" class="nav-cta desktop-only">Descargar</a>
     <button class="hamburger" id="hamburger" aria-label="Menú">
       <span></span><span></span><span></span>
     </button>
@@ -45,7 +45,6 @@
         <span></span><span></span>
       </button>
     </div>
-
     <nav class="mobile-menu-nav">
       <a href="#features" class="mobile-menu-link" data-num="01">
         <span class="mmlink-num">01</span>
@@ -63,13 +62,12 @@
         <span class="mmlink-arrow">→</span>
       </a>
     </nav>
-
     <div class="mobile-menu-bottom">
       <a href="#cta" class="mobile-menu-cta" id="mobile-menu-cta">
         <span class="mcta-icon">⬇</span>
         <div class="mcta-main">
-          <span class="mcta-label"> Descargar UrbanSafe </span>
-          <span class="mcta-sub">Próximamente en iOS </span>
+          <span class="mcta-label">Descargar UrbanSafe</span>
+          <span class="mcta-sub">Próximamente en iOS</span>
         </div>
       </a>
       <div class="mobile-menu-footer">
@@ -98,7 +96,7 @@
       </div>
 
       <h1 class="hero-title">
-        De Norte a Sur,<br><span class="title-blue"> Seguro</span><br>Para Todos.
+        De Norte a Sur,<br><span class="title-blue">Seguro</span><br>Para Todos.
       </h1>
 
       <p class="hero-sub">
@@ -111,52 +109,148 @@
         <button class="btn-secondary">▶ Ver cómo funciona</button>
       </div>
 
-      <!-- Trust bar -->
+      <!-- Trust bar mejorada -->
       <div class="trust-bar">
-        <div class="trust-item"><span class="trust-num">50K+</span><span class="trust-label">Usuarios activos</span></div>
+        <div class="trust-item">
+          <span class="trust-num">50K+</span>
+          <span class="trust-label">Usuarios activos</span>
+        </div>
         <div class="trust-divider"></div>
-        <div class="trust-item"><span class="trust-num">12</span><span class="trust-label">Ciudades</span></div>
+        <div class="trust-item">
+          <span class="trust-num">12</span>
+          <span class="trust-label">Ciudades</span>
+        </div>
         <div class="trust-divider"></div>
-        <div class="trust-item"><span class="trust-num">94%</span><span class="trust-label">Respuesta rápida</span></div>
+        <div class="trust-item">
+          <span class="trust-num">94%</span>
+          <span class="trust-label">Respuesta rápida</span>
+        </div>
       </div>
     </div>
 
-    <!-- Phone Mockup -->
+    <!-- Phone Mockup con 3 pantallas -->
     <div class="phone-wrap">
       <div class="phone-glow"></div>
+
+      <!-- Label de pantalla actual -->
+      <div class="slide-title-label" id="slide-title-label">📍 Ubicación en tiempo real</div>
+
       <div class="phone">
         <div class="phone-screen">
           <div class="phone-notch"></div>
-          <div class="phone-header">
-            <span class="phone-logo">UrbanSafe</span>
-            <span class="phone-status">
-              <span class="phone-status-dot"></span>Activo
-            </span>
-          </div>
-          <div class="phone-map">
-            <div class="map-grid"></div>
-            <div class="map-pin pin-1"></div>
-            <div class="map-pin pin-2"></div>
-            <div class="map-pin pin-3"></div>
-          </div>
-          <div class="phone-alert alert-blue">
-            <div class="alert-icon">🔵</div>
-            <div class="alert-text">
-              <div class="alert-title">Patrullaje activo</div>
-              <div class="alert-desc">Cra 7 con Calle 45</div>
+
+          <!-- SLIDE 1: Ubicación en tiempo real -->
+          <div class="phone-slide active" id="slide-0">
+            <div class="phone-header">
+              <span class="phone-logo">UrbanSafe</span>
+              <span class="phone-status">
+                <span class="phone-status-dot"></span>Activo
+              </span>
             </div>
-            <span class="alert-time">Ahora</span>
-          </div>
-          <div class="phone-alert alert-yellow">
-            <div class="alert-icon">⚠️</div>
-            <div class="alert-text">
-              <div class="alert-title">Zona de precaución</div>
-              <div class="alert-desc">3 reportes en tu área</div>
+            <div class="phone-map">
+              <div class="map-grid"></div>
+              <div class="map-pin pin-1"></div>
+              <div class="map-pin pin-2"></div>
+              <div class="map-pin pin-3"></div>
+              <div class="map-user-pin">
+                <div class="user-pin-ring"></div>
+                <div class="user-pin-dot"></div>
+              </div>
             </div>
-            <span class="alert-time">5m</span>
+            <div class="phone-info-row">
+              <div class="info-chip chip-green">🟢 Tu zona: Segura</div>
+              <div class="info-chip chip-blue">📡 GPS activo</div>
+            </div>
+            <div class="phone-alert alert-blue">
+              <div class="alert-icon">🔵</div>
+              <div class="alert-text">
+                <div class="alert-title">Patrullaje activo</div>
+                <div class="alert-desc">Cra 7 con Calle 45</div>
+              </div>
+              <span class="alert-time">Ahora</span>
+            </div>
           </div>
-          <div class="phone-sos">🆘 SOS — Emergencia</div>
+
+          <!-- SLIDE 2: Notificación de incidentes -->
+          <div class="phone-slide" id="slide-1">
+            <div class="phone-header">
+              <span class="phone-logo">UrbanSafe</span>
+              <span class="phone-notif-badge">3</span>
+            </div>
+            <div class="notif-list">
+              <div class="notif-card notif-red">
+                <div class="notif-icon-wrap icon-red-bg">🚨</div>
+                <div class="notif-body">
+                  <div class="notif-title">Incidente reportado</div>
+                  <div class="notif-desc">Robo a mano armada · Cll 72</div>
+                  <div class="notif-meta">Verificado · Hace 2 min</div>
+                </div>
+                <span class="notif-dot dot-red"></span>
+              </div>
+              <div class="notif-card notif-yellow">
+                <div class="notif-icon-wrap icon-yellow-bg">⚠️</div>
+                <div class="notif-body">
+                  <div class="notif-title">Zona de precaución</div>
+                  <div class="notif-desc">3 reportes en tu área</div>
+                  <div class="notif-meta">Comunidad · Hace 8 min</div>
+                </div>
+                <span class="notif-dot dot-yellow"></span>
+              </div>
+              <div class="notif-card notif-blue">
+                <div class="notif-icon-wrap icon-blue-bg">🔵</div>
+                <div class="notif-body">
+                  <div class="notif-title">Patrullaje iniciado</div>
+                  <div class="notif-desc">Cra 7 — Unidad 42</div>
+                  <div class="notif-meta">Policía · Hace 15 min</div>
+                </div>
+                <span class="notif-dot dot-blue"></span>
+              </div>
+            </div>
+            <div class="phone-sos">🆘 SOS — Emergencia</div>
+          </div>
+
+          <!-- SLIDE 3: Llamadas de emergencia -->
+          <div class="phone-slide" id="slide-2">
+            <div class="phone-header">
+              <span class="phone-logo">UrbanSafe</span>
+              <span class="phone-status">
+                <span class="phone-status-dot"></span>Activo
+              </span>
+            </div>
+            <p class="call-subtitle">Selecciona el servicio de emergencia</p>
+            <div class="call-grid">
+              <button class="call-btn call-police">
+                <div class="call-icon">🚔</div>
+                <div class="call-label">Policía</div>
+                <div class="call-number">112</div>
+              </button>
+              <button class="call-btn call-fire">
+                <div class="call-icon">🚒</div>
+                <div class="call-label">Bomberos</div>
+                <div class="call-number">119</div>
+              </button>
+              <button class="call-btn call-medic">
+                <div class="call-icon">🚑</div>
+                <div class="call-label">Ambulancia</div>
+                <div class="call-number">132</div>
+              </button>
+              <button class="call-btn call-redcross">
+                <div class="call-icon">🏥</div>
+                <div class="call-label">Cruz Roja</div>
+                <div class="call-number">144</div>
+              </button>
+            </div>
+            <div class="phone-sos">🆘 SOS — Emergencia</div>
+          </div>
+
         </div>
+      </div>
+
+      <!-- Dots del carrusel debajo del teléfono -->
+      <div class="carousel-indicators">
+        <button class="carousel-dot active" data-slide="0"></button>
+        <button class="carousel-dot" data-slide="1"></button>
+        <button class="carousel-dot" data-slide="2"></button>
       </div>
     </div>
   </section>
@@ -202,15 +296,15 @@
   <!-- STATS -->
   <section class="stats" id="stats">
     <div class="stat-item">
-      <div class="stat-num">94%</div>
+      <div class="stat-num" data-target="94" data-suffix="%">94%</div>
       <div class="stat-label">Tasa de respuesta más rápida</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">50K+</div>
+      <div class="stat-num" data-target="50" data-suffix="K+">50K+</div>
       <div class="stat-label">Ciudadanos en la red</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">12</div>
+      <div class="stat-num" data-target="12" data-suffix="">12</div>
       <div class="stat-label">Ciudades conectadas</div>
     </div>
     <div class="stat-item">
@@ -252,19 +346,16 @@
   <!-- CTA + QR -->
   <section class="cta-section" id="cta">
     <div class="cta-glow"></div>
-
     <div class="cta-inner">
-      <!-- Left: Text -->
       <div class="cta-left">
         <h2 class="cta-title">Descarga<br><span class="title-blue">UrbanSafe</span><br>hoy.</h2>
         <p class="cta-sub">Escanea el código QR para unirte a la comunidad que está transformando la seguridad urbana en Colombia.</p>
         <div class="cta-coming-soon">
           <span class="coming-dot"></span>
-          Próximamente en iOS 
+          Próximamente en iOS
         </div>
       </div>
 
-      <!-- Right: QR Placeholder -->
       <div class="qr-container">
         <div class="qr-card">
           <div class="qr-card-header">

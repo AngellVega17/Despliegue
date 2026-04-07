@@ -23,12 +23,7 @@ document.querySelectorAll('button, a, .feature-card').forEach(el => {
 // ─── LOGO — SCROLL AL INICIO + RECARGA ──────────────────────────────────────
 function goHome(e) {
   e.preventDefault();
-  // Si ya estamos arriba, recarga directo
-  if (window.scrollY < 10) {
-    location.reload();
-    return;
-  }
-  // Si estamos abajo, primero sube y luego recarga
+  if (window.scrollY < 10) { location.reload(); return; }
   window.scrollTo({ top: 0, behavior: 'smooth' });
   const onScrollEnd = () => {
     if (window.scrollY < 10) {
@@ -37,10 +32,8 @@ function goHome(e) {
     }
   };
   window.addEventListener('scroll', onScrollEnd);
-  // Fallback por si el scroll no dispara eventos
   setTimeout(() => location.reload(), 800);
 }
-
 const logoNav    = document.getElementById('logo-link');
 const logoFooter = document.getElementById('logo-link-footer');
 if (logoNav)    logoNav.addEventListener('click', goHome);
@@ -71,12 +64,87 @@ hamburger.addEventListener('click', () =>
   mobileMenu.classList.contains('open') ? closeMenu() : openMenu()
 );
 menuClose.addEventListener('click', closeMenu);
-backdrop.addEventListener('click', closeMenu); // clic fuera cierra el panel
-
+backdrop.addEventListener('click', closeMenu);
 mobileMenu.querySelectorAll('.mobile-menu-link').forEach(link =>
   link.addEventListener('click', closeMenu)
 );
 if (menuCta) menuCta.addEventListener('click', closeMenu);
+
+
+// ─── PHONE CAROUSEL ──────────────────────────────────────────────────────────
+const slides     = document.querySelectorAll('.phone-slide');
+const dots       = document.querySelectorAll('.carousel-dot');
+const titleLabel = document.getElementById('slide-title-label');
+
+const slideTitles = [
+  '📍 Ubicación en tiempo real',
+  '🔔 Notificación de incidentes',
+  '📞 Llamadas de emergencia'
+];
+
+let currentSlide = 0;
+let carouselTimer = null;
+
+function goToSlide(index) {
+  // Quitar activo del slide y dot actuales
+  slides[currentSlide].classList.remove('active');
+  dots[currentSlide].classList.remove('active');
+
+  currentSlide = index;
+
+  // Activar nuevo slide y dot
+  slides[currentSlide].classList.add('active');
+  dots[currentSlide].classList.add('active');
+
+  // Actualizar label
+  if (titleLabel) {
+    titleLabel.style.opacity = '0';
+    setTimeout(() => {
+      titleLabel.textContent = slideTitles[currentSlide];
+      titleLabel.style.opacity = '1';
+    }, 150);
+  }
+}
+
+function nextSlide() {
+  goToSlide((currentSlide + 1) % slides.length);
+}
+
+function startCarousel() {
+  carouselTimer = setInterval(nextSlide, 3500);
+}
+
+function resetCarousel() {
+  clearInterval(carouselTimer);
+  startCarousel();
+}
+
+// Click en los dots
+dots.forEach(dot => {
+  dot.addEventListener('click', () => {
+    const idx = parseInt(dot.dataset.slide);
+    goToSlide(idx);
+    resetCarousel();
+  });
+});
+
+// Swipe touch en el teléfono
+const phoneEl = document.querySelector('.phone');
+if (phoneEl) {
+  let touchStartX = 0;
+  phoneEl.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  phoneEl.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) {
+      if (diff > 0) goToSlide((currentSlide + 1) % slides.length);
+      else          goToSlide((currentSlide - 1 + slides.length) % slides.length);
+      resetCarousel();
+    }
+  }, { passive: true });
+}
+
+// Iniciar autoplay
+startCarousel();
 
 
 // ─── TOAST ───────────────────────────────────────────────────────────────────
