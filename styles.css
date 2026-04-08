@@ -28,24 +28,26 @@
   flex: 1;
   display: flex; flex-direction: column; align-items: center;
   justify-content: center; gap: 5px;
-  padding: 28px 20px;
+  padding: 24px 12px;
   transition: background 0.25s;
   cursor: default;
+  min-width: 0;
 }
 .stats-banner-item:hover {
   background: rgba(0,122,255,0.06);
 }
 .stats-banner-num {
   font-family: 'Syne', sans-serif; font-weight: 800;
-  font-size: 2rem; letter-spacing: -0.04em;
+  font-size: clamp(1.4rem, 5vw, 2rem); letter-spacing: -0.04em;
   background: linear-gradient(135deg, #fff 30%, #7BB8FF 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-  line-height: 1;
+  line-height: 1; white-space: nowrap;
 }
 .stats-banner-label {
-  font-size: 0.68rem; color: var(--muted);
-  text-transform: uppercase; letter-spacing: 0.09em;
-  font-weight: 500;
+  font-size: clamp(0.55rem, 2vw, 0.68rem); color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.07em;
+  font-weight: 500; text-align: center;
+  white-space: nowrap;
 }
 .stats-banner-divider {
   width: 1px;
@@ -1127,6 +1129,9 @@ footer {
 }
 
 @media (max-width: 600px) {
+  .stats-banner { padding: 0 16px; margin-top: 24px; }
+  .stats-banner-inner { border-radius: 16px; }
+  .stats-banner-item { padding: 20px 8px; }
   .hero { padding: 150px 20px 60px; }
   .hero-title { font-size: clamp(2.4rem, 11vw, 3.5rem); }
   .hero-actions { flex-direction: column; align-items: center; }
