@@ -222,8 +222,8 @@ nav {
   background: rgba(0,122,255,0.07);
   border: 1px solid rgba(0,122,255,0.18);
   border-radius: 14px;
-  width: 160px;
-  height: 56px;
+  width: 190px;
+  height: 68px;
   overflow: hidden;
   padding: 0;
   transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
@@ -241,14 +241,14 @@ nav {
   object-fit: contain;
   object-position: center;
   /* Scale up para eliminar el espacio transparente interno */
-  transform: scale(1.45);
+  transform: scale(2.2);
   filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(0,122,255,0.5));
   opacity: 1;
   transition: filter 0.3s, transform 0.3s;
 }
 .nav-logo-link:hover .nav-logo-img {
   filter: brightness(0) invert(1) drop-shadow(0 0 18px rgba(0,122,255,0.85));
-  transform: scale(1.52);
+  transform: scale(2.3);
 }
 .nav-links { display: flex; gap: 36px; list-style: none; }
 .nav-links a {
