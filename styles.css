@@ -20,24 +20,19 @@
 /* ─── NAV LOGO CONTAINER ─── */
 .nav-logo-container {
   display: flex; align-items: center; justify-content: center;
-  background: rgba(0,122,255,0.06);
-  border: 1px solid rgba(0,122,255,0.12);
-  border-radius: 14px;
-  padding: 4px 10px;
-  transition: background 0.3s, border-color 0.3s;
+  border-radius: 10px;
+  padding: 2px 6px;
+  transition: background 0.3s;
 }
 .nav-logo-link:hover .nav-logo-container {
-  background: rgba(0,122,255,0.12);
-  border-color: rgba(0,122,255,0.28);
+  background: rgba(0,122,255,0.08);
 }
 
 /* ─── MOBILE LOGO CONTAINER ─── */
 .mobile-logo-container {
   display: flex; align-items: center; justify-content: center;
-  background: rgba(0,122,255,0.06);
-  border: 1px solid rgba(0,122,255,0.12);
-  border-radius: 12px;
-  padding: 4px 8px;
+  border-radius: 8px;
+  padding: 2px 6px;
 }
 
 /* ─── MOBILE CTA MEJORADO ─── */
