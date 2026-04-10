@@ -6,7 +6,6 @@
   height: calc(100% - 24px);
   object-fit: contain;
   border-radius: 8px;
-  /* Fondo blanco — el QR DEBE ser negro sobre blanco para ser escaneable */
   background: #ffffff;
   padding: 8px;
   z-index: 2;
@@ -18,9 +17,73 @@
   filter: none;
 }
 
-/* ─── MEJORAS VISUALES GENERALES ─── */
+/* ─── NAV LOGO CONTAINER ─── */
+.nav-logo-container {
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,122,255,0.06);
+  border: 1px solid rgba(0,122,255,0.12);
+  border-radius: 14px;
+  padding: 4px 10px;
+  transition: background 0.3s, border-color 0.3s;
+}
+.nav-logo-link:hover .nav-logo-container {
+  background: rgba(0,122,255,0.12);
+  border-color: rgba(0,122,255,0.28);
+}
 
-/* Hero — partículas flotantes extra */
+/* ─── MOBILE LOGO CONTAINER ─── */
+.mobile-logo-container {
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,122,255,0.06);
+  border: 1px solid rgba(0,122,255,0.12);
+  border-radius: 12px;
+  padding: 4px 8px;
+}
+
+/* ─── MOBILE CTA MEJORADO ─── */
+.mcta-arrow {
+  font-size: 1.1rem; color: rgba(255,255,255,0.8);
+  font-weight: 700; flex-shrink: 0;
+  animation: bounceDown 1.8s ease-in-out infinite;
+}
+.mcta-sub {
+  font-size: 0.62rem; color: rgba(255,255,255,0.5); font-weight: 300;
+}
+
+/* ─── DRIVE NOTICE (desktop QR card) ─── */
+.drive-notice {
+  display: flex; align-items: flex-start; gap: 7px;
+  background: rgba(255,204,0,0.07);
+  border: 1px solid rgba(255,204,0,0.18);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-top: 12px;
+  font-size: 0.68rem; color: rgba(240,244,255,0.65);
+  line-height: 1.45;
+}
+.drive-notice strong { color: rgba(255,204,0,0.85); font-weight: 600; }
+
+/* ─── MOBILE DRIVE NOTICE ─── */
+.mobile-drive-notice {
+  display: flex; align-items: flex-start; gap: 8px;
+  background: rgba(255,204,0,0.06);
+  border: 1px solid rgba(255,204,0,0.15);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.7rem; color: rgba(240,244,255,0.55);
+  line-height: 1.45;
+}
+.mobile-drive-notice strong { color: rgba(255,204,0,0.8); font-weight: 600; }
+
+/* ─── CTA title — gradiente en UrbanSafe ─── */
+.cta-title .title-blue {
+  background: linear-gradient(135deg, var(--blue) 0%, #7BB8FF 60%, #A8D4FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── MEJORAS VISUALES GENERALES ─── */
 .hero::after {
   content: '';
   position: absolute; inset: 0;
@@ -31,13 +94,11 @@
   pointer-events: none; opacity: 0.5;
 }
 
-/* Mejora QR frame — más grande y visible */
 .qr-frame {
   width: 220px !important;
   height: 220px !important;
 }
 
-/* QR card — sombra más dramática */
 .qr-card {
   box-shadow:
     0 0 0 1px rgba(0,122,255,0.1),
@@ -46,31 +107,26 @@
     inset 0 1px 0 rgba(255,255,255,0.06) !important;
 }
 
-/* Glow animado bajo la qr card */
 .qr-orb {
   width: 380px !important;
   height: 380px !important;
   animation: glowPulse 3s ease-in-out infinite !important;
 }
 
-/* Stats banner — borde superior brillante más visible */
 .stats-banner-inner::before {
   background: linear-gradient(90deg, transparent, rgba(0,122,255,0.7), rgba(52,199,89,0.4), rgba(0,122,255,0.7), transparent) !important;
 }
 
-/* Feature cards — hover más rico */
 .feature-card:hover {
   background: #0F1A2E !important;
   box-shadow: inset 0 0 40px rgba(0,122,255,0.04);
 }
 
-/* Steps — hover glow */
 .step-card:hover {
   background: #0F1A2E !important;
   box-shadow: inset 0 0 30px rgba(0,122,255,0.05);
 }
 
-/* APK btn — efecto ripple más fuerte */
 .apk-btn {
   box-shadow: 0 8px 32px rgba(0,122,255,0.45) !important;
 }
@@ -78,20 +134,11 @@
   box-shadow: 0 16px 48px rgba(0,122,255,0.6) !important;
 }
 
-/* Phone glow más intenso */
 .phone-glow {
   background: radial-gradient(ellipse at center, rgba(0,122,255,0.14) 0%, transparent 65%) !important;
 }
 
-/* CTA title — gradiente en UrbanSafe */
-.cta-title .title-blue {
-  background: linear-gradient(135deg, var(--blue) 0%, #7BB8FF 60%, #A8D4FF 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Scroll indicator sutil en hero */
+/* ─── SCROLL HINT ─── */
 .hero-scroll-hint {
   position: absolute;
   bottom: 32px; left: 50%;
@@ -115,8 +162,10 @@
 
 @media (max-width: 600px) {
   .qr-frame { width: 180px !important; height: 180px !important; }
-  .qr-real-img { inset: 12px; width: calc(100% - 24px); height: calc(100% - 24px); }
+  .qr-real-img { inset: 10px; width: calc(100% - 20px); height: calc(100% - 20px); }
+  .nav-logo-container { padding: 3px 8px; border-radius: 10px; }
 }
+
 
 .social-section {
   padding: 100px 48px;
